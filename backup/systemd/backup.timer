@@ -1,0 +1,10 @@
+[Unit]
+Descriptions=rclone2cloud
+
+[Timer]
+Unit=backup.service
+OnBootSec=1min
+OnUnitInactiveSec=5min
+
+[Install]
+WantedBy=timers.target

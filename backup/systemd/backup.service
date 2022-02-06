@@ -1,0 +1,14 @@
+[Unit]
+Description=rclone2cloud
+Wants=backup.timer
+
+[Service]
+User=root
+Group=root
+Type=oneshot
+ExecStart=/home/root/backup/bin/backup.sh
+WorkingDirectory=/home/root/backup
+
+[Install]
+WantedBy=multi-user.target
+
