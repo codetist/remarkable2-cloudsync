@@ -117,6 +117,11 @@ systemctl start backup.timer
 Rerun ```systemctl daemon-reload``` whenever you change
 the ```/etc/systemd/system/backup.timer```file!
 
+### Remarkable 2 Official Updates
+
+⚠️ User-defined services are getting removed by system updates. ⚠️
+So the steps under [Install backup services](#install-backup-service) might need to be executed again after updating your Remarkable 2!
+
 ### What's next?
 
 Some ideas, what to do with the synced data:
