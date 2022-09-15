@@ -26,7 +26,7 @@ if ping -q -c 1 -W 1 google.com >/dev/null 2>&1; then
     echo "$FILESCHANGED files changed, syncing...."
 
     # Delete previous log
-    rm $LOGPATH/lastSync.txt
+    rm $SYNCFILE
 
     # Sync Remarkable data
     /home/root/backup/bin/rclone sync --config=$CONFPATH/rclone.conf --log-file=$SYNCFILE --log-level INFO  $RMDATA cloud:/TabletContent

@@ -117,6 +117,23 @@ systemctl start backup.timer
 Rerun ```systemctl daemon-reload``` whenever you change
 the ```/etc/systemd/system/backup.timer```file!
 
+### Syncfile
+
+The $SYNCFILE is created by ```rclone``` after copying the Remarkable content
+to the destination directory. It contains a short report of the files
+that where copied and any errors that might have occurred. It will also be
+synced.
+
+Purpose of the $SYNCFILE:
+
+* The timestamp of this file is used, to check if any files have
+  been changed after last sync. If the file does not exist, it will 
+  be created with a timestamp in the past. This makes sure, the initial
+  sync catches all existing files.
+* It will be re-created by ```rclone``` on every sync.
+* You can check this file on the destination to see when the last sync
+  happened. Note, the Remarkable 2 uses UTC internally,  no local timezone.
+
 ### Remarkable 2 Official Updates
 
 ⚠️ User-defined services are getting removed by system updates. ⚠️
